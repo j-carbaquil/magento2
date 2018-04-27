@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="jston" translate="label" sortOrder="10">
+            <label>Jston</label>
+        </tab>
+        <section id="dynamicoption" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Configuration Fields</label>
+            <tab>jston</tab>
+            <resource>Jston_DynamicOption::config</resource>
+            <group id="basic" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Basic Fields</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="welcome_note" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Welcome Note</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="time" translate="label" type="time" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Time</label>
+                </field>
+            </group>
+            <group id="custom" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Fields</label>
+                <field id="row_time_only" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Time Picker</label>
+                    <frontend_model>Jston\DynamicOption\Block\Adminhtml\Form\Field\RowTimeOnly</frontend_model>
+                    <backend_model>Jston\DynamicOption\Config\Backend\DynamicAction</backend_model>
+                </field>
+                <field id="row_date_only" translate="label" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Date Picker</label>
+                    <frontend_model>Jston\DynamicOption\Block\Adminhtml\Form\Field\RowDate</frontend_model>
+                    <backend_model>Jston\DynamicOption\Config\Backend\DynamicAction</backend_model>
+                </field>
+                <field id="row_datetime" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Datetime Picker</label>
+                    <frontend_model>Jston\DynamicOption\Block\Adminhtml\Form\Field\RowDateTime</frontend_model>
+                    <backend_model>Jston\DynamicOption\Config\Backend\DynamicAction</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
